@@ -1,5 +1,3 @@
-setwd("~/betme/coding2")
-
 library(tidyverse)
 
 # Download data for top four divisions from 2010-2020 inc.
