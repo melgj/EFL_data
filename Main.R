@@ -280,5 +280,6 @@ fbd <- fbd %>% group_by(AwayTeam) %>%
          ASA_RAvg_L1 = lag(ASA_RAvg, 1)) %>% 
   ungroup()
 
+save(homeGms, awayGms, finalTables, fbd, file = "FB_Data_Files.RData")
 
 write_csv(fbd, "fbData_1011_1819.csv")

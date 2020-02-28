@@ -67,6 +67,8 @@ enet$finalModel$meanx
 
 saveRDS(enet, "enet_model.RDS")
 
+
+
 # MARS model
 
 marsGrid <- expand.grid(.degree = 1:2, .nprune = 2:20)

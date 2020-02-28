@@ -2,7 +2,7 @@ library(radiant)
 
 # Load Data
 
-fbData <- read_csv("fbData_1011_1819.csv", col_names = T)
+fbd <- read_csv("fbData_1011_1819.csv", col_names = T)
 
 ##########################################################
 
@@ -15,7 +15,7 @@ fbData <- read_csv("fbData_1011_1819.csv", col_names = T)
 # This function will print a summary and write results to a file named "h2hgoals.csv" in the current working directory
 
 
-h2h <- function(df = fbData, thresh = 0, matches = 0, goals = 0) {
+h2h <- function(df = fbd, thresh = 0, matches = 0, goals = 0) {
   df2 <- data.frame()
   for(matchup in seq_along(unique(df$MatchStub))) {
     x <- filter(df, df$MatchStub == df$MatchStub[matchup])  
