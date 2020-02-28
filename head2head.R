@@ -1,3 +1,5 @@
+library(radiant)
+
 # Load Data
 
 fbData <- read_csv("fbData_1011_1819.csv", col_names = T)

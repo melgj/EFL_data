@@ -4,9 +4,6 @@ library(data.table)
 library(lubridate)
 library(caTools)
 library(caret)
-library(corrplot)
-library(radiant)
-
 
 fbData <- data.table::fread("FootballData_AllSeasons.csv", sep = ",", header = T)
 
