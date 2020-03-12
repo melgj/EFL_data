@@ -12,9 +12,17 @@ urlPath <- readline(prompt = "Enter URL to file: ")
 
 d <- read_csv(urlPath, col_names = T)
 
-# print json format to standard out
+# convert to json format and write to file
 
-d %>% jsonlite::toJSON() %>% print()
+js <- d %>% jsonlite::toJSON()
+
+write_json(js, "footballdata.json")
+
+# If Time column is missing, replace with default value
+
+if(!("Time" %in% colnames(d))) {
+  d$Time <- c("15:00:00")
+}
 
 # paste Date and Time into one variable
 
@@ -62,7 +70,6 @@ dbpw <- readline(prompt = "Enter postgresql password: ")
 # loads Postgres driver
 dbd <- dbDriver("PostgreSQL")
 
-# create connection (Requires database called football_db to function)
 con <- dbConnect(dbd, dbname = "football_db",
                  host = "localhost", port = 5432,
                  user = username, password = dbpw)
